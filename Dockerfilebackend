@@ -1,0 +1,10 @@
+FROM node
+
+RUN npm install -g sh
+RUN npm install -g json-server
+
+WORKDIR /data
+VOLUME /data
+COPY ./src/data/index.json /data
+
+CMD json-server --w index.json --host 0.0.0.0 --port 5000
