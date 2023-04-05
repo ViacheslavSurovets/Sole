@@ -4,9 +4,12 @@
   gap: 1rem;
   padding-top: 5rem;
 
-  &__text {
-    @include base-text($alkatraSemiBold, 2rem);
+  .text {
     @include line-clamp(1);
+  }
+
+  &__discount {
+    color: get-color($error, 500)
   }
 
   &__image {

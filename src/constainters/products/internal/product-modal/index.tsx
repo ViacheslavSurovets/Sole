@@ -17,12 +17,21 @@ const ProductModal = ({
   brand,
   price,
   currency,
-  closeModal
+  closeModal,
+  discountPrice
 }: IProduct & { closeModal: () => void }) => (
   <Modal className="product-modal" closeModal={closeModal}>
     {title ? <Text>{title}</Text> : null}
     {brand ? <Text>{brand}</Text> : null}
     {price && currency ? <Text>{formatAmount({ currency, amount: price })}</Text> : null}
+    {price && discountPrice ? (
+      <>
+        <Text>{locales.products.productModal.discount}</Text>
+        <Text className="product-modal__discount">
+          {formatAmount({ currency, amount: discountPrice })}
+        </Text>
+      </>
+    ) : null}
     <img
       className="product-modal__image"
       src={image || defaultImage}

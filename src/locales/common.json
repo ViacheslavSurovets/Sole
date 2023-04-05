@@ -5,6 +5,7 @@
   "products": {
     "noProducts": "There is no products",
     "productModal": {
+      "discount": "Discount",
       "button": "Purchase"
     }
   }
