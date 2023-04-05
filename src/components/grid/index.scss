@@ -1,0 +1,11 @@
+@import 'src/styles/common';
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  @include respond(desktop) {
+    gap: 2rem;
+  }
+}

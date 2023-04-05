@@ -1,0 +1,19 @@
+@import 'src/styles/common';
+
+.product-modal {
+  gap: 1rem;
+  padding-top: 5rem;
+
+  &__text {
+    @include base-text($alkatraSemiBold, 2rem);
+    @include line-clamp(1);
+  }
+
+  &__image {
+    height: 25rem;
+  }
+
+  &__button {
+    margin-top: 2rem;
+  }
+}

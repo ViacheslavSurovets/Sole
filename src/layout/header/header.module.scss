@@ -1,0 +1,7 @@
+@import 'src/styles/common';
+
+.header {
+  @include flex-center;
+  height: 10rem;
+  padding: 1rem 0;
+}

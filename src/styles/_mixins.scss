@@ -1,0 +1,36 @@
+@mixin respond($name) {
+  @media #{inspect(map-get($breakpoints, $name))} {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin base-text(
+  $font-family: $workSansSemiBold,
+  $font-size,
+  $line-height: calc($font-size * 1.25),
+  $color: $black
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin line-clamp($line-quantity) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-quantity;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-clamp: $line-quantity;
+}

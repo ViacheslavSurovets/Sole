@@ -1,0 +1,5 @@
+@import 'src/styles/common';
+
+.text {
+  @include base-text($alkatraSemiBold, 2rem);
+}

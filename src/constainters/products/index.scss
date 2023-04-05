@@ -1,0 +1,19 @@
+@import 'src/styles/common';
+
+.products {
+  @include flex-center;
+  min-height: 50rem;
+
+  .grid {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 3rem auto 5rem;
+  }
+
+  .spinner {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+}

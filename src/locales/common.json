@@ -1,0 +1,11 @@
+{
+  "error": {
+    "common": "Something went wrong"
+  },
+  "products": {
+    "noProducts": "There is no products",
+    "productModal": {
+      "button": "Purchase"
+    }
+  }
+}

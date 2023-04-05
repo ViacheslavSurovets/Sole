@@ -1,0 +1,19 @@
+$breakpoints: (
+  tablet: (
+    min-width: 40em
+  ),
+  //640px
+  desktop:
+    (
+      min-width: 63.94em
+    )
+    //1023px
+);
+
+$alkatraNormal: 'AlkatraRegular';
+$alkatraSemiBold: 'AlkatraSemiBold';
+$alkatraBold: 'AlkatraBold';
+
+$workSansRegular: 'WorkSansRegular';
+$workSansSemiBold: 'WorkSansSemiBold';
+$workSansBold: 'WorkSansBold';

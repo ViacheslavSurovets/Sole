@@ -1,0 +1,44 @@
+@import 'src/styles/common';
+
+.product {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  transition: 0.3s box-shadow ease-in-out;
+  width: 100%;
+  max-width: 46rem;
+  height: 27rem;
+  cursor: pointer;
+
+  @include respond(tablet) {
+    max-width: 42rem;
+    height: 25rem;
+  }
+
+  &:hover {
+    box-shadow: 0 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0 rgb(0 0 0 / 14%),
+      0 1px 8px 0 rgb(0 0 0 / 12%);
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 1s;
+
+    &_fade {
+      opacity: 0;
+    }
+  }
+
+  &__label {
+    @include base-text($alkatraSemiBold, 2rem, _, $black);
+    @include line-clamp(1);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, $white, transparent);
+    padding: 0.4rem 0.4rem 0.4rem 1.6rem;
+  }
+}

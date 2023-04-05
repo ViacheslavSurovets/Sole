@@ -1,0 +1,5 @@
+@import 'src/styles/common';
+
+.error-message {
+  @include base-text($alkatraBold, 2rem, _, get-color($error, 500));
+}
