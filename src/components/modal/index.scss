@@ -12,7 +12,7 @@
   width: 100%;
   margin: 5rem;
   max-height: calc(100vh - 3rem);
-  max-width: calc(100vw - 7rem);
+  max-width: Min(calc(100vw - 6rem), 47rem) ;
   padding: 2rem;
 
   &__close-icon {
@@ -25,12 +25,12 @@
   &__body {
     overflow-y: auto;
     height: 35rem;
-    transition: all 3s ease-in-out;
+    transition: 3s all ease-in-out;
     display: flex;
   }
 
   @include respond(tablet) {
-    max-width: 37rem;
+    max-width: 50rem;
     padding: 3.5rem;
   }
 }

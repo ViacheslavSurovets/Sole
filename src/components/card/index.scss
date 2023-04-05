@@ -1,16 +1,21 @@
 @import 'src/styles/common';
 
-.product {
+.card {
   display: flex;
   flex-flow: column;
   position: relative;
   transition: 0.3s box-shadow ease-in-out;
   width: 100%;
   max-width: 46rem;
-  height: 27rem;
+  height: 26rem;
   cursor: pointer;
 
   @include respond(tablet) {
+    max-width: 50rem;
+    height: 28rem;
+  }
+
+  @include respond(desktop) {
     max-width: 42rem;
     height: 25rem;
   }

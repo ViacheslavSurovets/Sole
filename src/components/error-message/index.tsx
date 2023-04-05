@@ -5,7 +5,9 @@ interface IErrorMessage {
 }
 
 const ErrorMessage = ({ message }: IErrorMessage) => (
-  <span className="error-message">{message}</span>
+  <span className="error-message" aria-label={`Error: ${message}`}>
+    {message}
+  </span>
 )
 
 export default ErrorMessage

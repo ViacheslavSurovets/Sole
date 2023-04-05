@@ -1,15 +1,16 @@
-import { FC, ReactNode } from 'react'
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react'
 import cn from 'classnames'
 
 import './index.scss'
 
-interface IText {
-  className?: string
+interface IText extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
   children: ReactNode
 }
 
-const Text: FC<IText> = ({ className, children }) => (
-  <span className={cn('text', className)}>{children}</span>
+const Text: FC<IText> = ({ className, children, ...rest }) => (
+  <span className={cn('text', className)} {...rest}>
+    {children}
+  </span>
 )
 
 export default Text

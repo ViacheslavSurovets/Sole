@@ -1,13 +1,7 @@
 $breakpoints: (
-  tablet: (
-    min-width: 40em
-  ),
-  //640px
-  desktop:
-    (
-      min-width: 63.94em
-    )
-    //1023px
+        tablet: (min-width: 40em),        //640px
+        desktop:(min-width: 63.94em),     //1023px
+        big-desktop:(min-width: 80em)     //1280px
 );
 
 $alkatraNormal: 'AlkatraRegular';

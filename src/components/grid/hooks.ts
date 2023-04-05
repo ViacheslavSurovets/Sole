@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import type { IGrid } from './index'
 
-let interval: ReturnType<typeof setInterval>
+let interval: NodeJS.Timeout
 
 export const useGrid = <T>({ data, visibleItems }: Omit<IGrid<T>, 'onCardClick'>) => {
   const [activeItemId, setActiveItemId] = useState(0)

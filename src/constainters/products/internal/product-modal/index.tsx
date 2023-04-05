@@ -1,6 +1,4 @@
-import { Button, Modal, Text } from '../../../../components'
-
-import defaultImage from '../../../../assets/images/no-image.webp'
+import { Button, Image, Modal, Text } from '../../../../components'
 
 import { formatAmount } from '../../../../utils/format-ammount'
 
@@ -20,32 +18,29 @@ const ProductModal = ({
   closeModal,
   discountPrice
 }: IProduct & { closeModal: () => void }) => (
-  <Modal className="product-modal" closeModal={closeModal}>
-    {title ? <Text>{title}</Text> : null}
-    {brand ? <Text>{brand}</Text> : null}
-    {price && currency ? <Text>{formatAmount({ currency, amount: price })}</Text> : null}
-    {price && discountPrice ? (
+  <Modal
+    className="product-modal"
+    closeModal={closeModal}
+    ariaLabel={`${title} price: ${price} ${discountPrice ? `discount ${discountPrice}` : ''}`}
+  >
+    {title && <Text>{title}</Text>}
+    {brand && <Text>{brand}</Text>}
+    {price && currency && <Text>{formatAmount({ currency, amount: price })}</Text>}
+    {price && discountPrice && (
       <>
         <Text>{locales.products.productModal.discount}</Text>
         <Text className="product-modal__discount">
           {formatAmount({ currency, amount: discountPrice })}
         </Text>
       </>
-    ) : null}
-    <img
-      className="product-modal__image"
-      src={image || defaultImage}
-      alt={title}
-      onError={({ currentTarget }) => {
-        currentTarget.onerror = null
-        currentTarget.src = defaultImage
-      }}
-    />
+    )}
+    <Image className="product-modal__image" src={image} alt={title} aria-label={`${title} image`} />
     <Button
       className="product-modal__button"
-      onClick={() => (window.location.href = url)}
+      onClick={() => window.open(url, '_blank')}
       disabled={!url}
       label={locales.products.productModal.button}
+      aria-label={locales.products.productModal.button}
     />
   </Modal>
 )

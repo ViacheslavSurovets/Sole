@@ -1,15 +1,14 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEventHandler } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 import cn from 'classnames'
 
 import './index.scss'
 
-interface IButton<T>
+interface IButton
   extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  onClick?: T & MouseEventHandler<HTMLButtonElement>
   label: string
 }
 
-const Button = <T,>({ onClick, className, label, ...rest }: IButton<T>) => (
+const Button = ({ onClick, className, label, ...rest }: IButton) => (
   <button className={cn('button', className)} onClick={onClick} {...rest}>
     {label}
   </button>

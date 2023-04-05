@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { IProduct } from '../../models/product'
+
+import type { IProduct } from '../../models/product'
 
 export const useModal = () => {
   const [isModalOpened, setIsModalOpened] = useState(false)
