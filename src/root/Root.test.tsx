@@ -2,8 +2,14 @@ import { render, screen } from '@testing-library/react'
 
 import Root from './index'
 
-test('renders learn react link', () => {
-  render(<Root />)
-  const linkElement = screen.getByText(/learn react/i)
-  expect(linkElement).toBeInTheDocument()
+describe('Root', () => {
+  describe('Root', () => {
+    it('renders without crashing', () => {
+      render(<Root />)
+      const headerElement = screen.getByRole('banner')
+      const mainElement = screen.getByRole('main')
+      expect(headerElement).toBeInTheDocument()
+      expect(mainElement).toBeInTheDocument()
+    })
+  })
 })

@@ -12,12 +12,13 @@ interface IModal {
   children: ReactNode
   className?: string
   ariaLabel?: string
+  dataTestId?: string
 }
 
-const Modal: FC<IModal> = ({ closeModal, className, ariaLabel, children }) => (
+const Modal: FC<IModal> = ({ closeModal, className, dataTestId, ariaLabel, children }) => (
   <div className="modal-wrapper">
-    <div className={cn('modal', className)} aria-label={ariaLabel}>
-      <CloseIcon className="modal__close-icon" onClick={closeModal} />
+    <div className={cn('modal', className)} aria-label={ariaLabel} data-testid={dataTestId}>
+      <CloseIcon className="modal__close-icon" onClick={closeModal} data-testid="close-icon" />
       {children}
     </div>
     <div className="app-overlay" onClick={closeModal} />

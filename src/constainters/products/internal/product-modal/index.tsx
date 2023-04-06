@@ -22,6 +22,7 @@ const ProductModal = ({
     className="product-modal"
     closeModal={closeModal}
     ariaLabel={`${title} price: ${price} ${discountPrice ? `discount ${discountPrice}` : ''}`}
+    dataTestId="product-modal"
   >
     {title && <Text>{title}</Text>}
     {brand && <Text>{brand}</Text>}

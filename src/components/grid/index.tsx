@@ -20,7 +20,7 @@ const Grid = <T extends Record<'id' | 'image' | 'title', string>>({
   const { gridItems } = useGrid({ data, visibleItems })
 
   return (
-    <div className="grid">
+    <div className="grid" data-testid="grid">
       {gridItems.map(p => (
         <Card<T> key={p.id} data={p} onCardClick={onCardClick} />
       ))}

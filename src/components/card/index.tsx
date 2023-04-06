@@ -15,7 +15,7 @@ const Card = <T extends { image: string; title: string }>({ data, onCardClick }:
     instance.currentTarget.classList.remove('card__image_fade')
 
   return (
-    <figure className="card" onClick={() => onCardClick(data)}>
+    <figure className="card" onClick={() => onCardClick(data)} data-testid="card">
       <Image
         className="card__image card__image_fade"
         src={image}
