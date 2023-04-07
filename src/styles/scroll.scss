@@ -1,0 +1,31 @@
+@import "common";
+
+$scroll-background: get-color($bg, 200);
+$scroll-color: get-color($bg, 500);
+
+::-webkit-scrollbar {
+    width: .8rem;
+    height: .8rem;
+
+    /* Track */
+    &-track {
+        background: $scroll-background;
+    }
+
+    /* Handle */
+    &-thumb {
+        background: $scroll-color;
+    }
+
+    /* Handle on hover */
+    &-thumb:hover {
+        background: get-color($bg, 700);
+    }
+}
+
+@supports (scrollbar-color:  $scroll-color $scroll-background) {
+    * {
+        scrollbar-color: $scroll-color $scroll-background;
+            scrollbar-width: thin;
+    }
+}

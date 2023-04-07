@@ -4,6 +4,10 @@ import Root from './root'
 
 import './styles/index.scss'
 
+import { getIsWindowsDevice } from './utils/get-is-windows-device'
+
+getIsWindowsDevice() && require('./styles/scroll.scss')
+
 import reportWebVitals from './reportWebVitals'
 
 const root = createRoot(document.getElementById('root') as HTMLElement)
